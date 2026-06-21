@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadscommssz | Academic & Professional Commissions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        mint: '#8ce3b6',
+                        mintDark: '#6bc698',
+                        babyBlue: '#d1eefc',
+                        dark: '#0f172a',
+                        darker: '#020617'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                        'gradient-x': 'gradient-x 3s ease infinite',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8ce3b6; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6bc698; 
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(209, 238, 252, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(140, 227, 182, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+        #loader {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .hide-loader {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .tech-track:hover {
+            animation-play-state: paused;
+        }
+        .tilt-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tilt-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(140, 227, 182, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #6bc698, #3b82f6, #6bc698);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-x 3s linear infinite;
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body id="body" class="overflow-hidden">
+
+    <div id="loader" class="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-babyBlue">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-32 h-32 md:w-48 md:h-48 border-y-4 border-mint rounded-full animate-spin"></div>
+            <div class="absolute w-24 h-24 md:w-40 md:h-40 border-x-4 border-white rounded-full animate-spin-slow"></div>
+            <img src="images/acFdsz51_400x400.jpg" alt="Acadscommssz" class="w-20 h-20 md:w-32 md:h-32 object-cover rounded-full border-4 border-white shadow-2xl z-10 animate-pulse">
+        </div>
+    </div>
+
+    <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[90] flex flex-col gap-3 md:gap-4">
+        <a href="mailto:contact@acadscommssz.com" class="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group relative border-2 border-transparent hover:border-red-400">
+            <img src="images/email.png" alt="Email" class="w-5 h-5 md:w-8 md:h-8 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732200.png'">
+            <span class="absolute right-16 md:right-20 bg-darker text-white font-semibold text-xs md:text-sm px-3 md:px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg hidden sm:block">Email Me</span>
+        </a>
+        <a href="https://t.me/acadscommssz" target="_blank" class="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group relative border-2 border-transparent hover:border-blue-400">
+            <img src="images/telegram.png" alt="Telegram" class="w-6 h-6 md:w-9 md:h-9 object-contain ml-[-2px]" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'">
+            <span class="absolute right-16 md:right-20 bg-darker text-white font-semibold text-xs md:text-sm px-3 md:px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg hidden sm:block">Telegram</span>
+        </a>
+        <a href="https://x.com/acadscommssz" target="_blank" class="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group relative border-2 border-transparent hover:border-gray-800">
+            <img src="images/x.png" alt="X" class="w-5 h-5 md:w-8 md:h-8 object-contain" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg'">
+            <span class="absolute right-16 md:right-20 bg-darker text-white font-semibold text-xs md:text-sm px-3 md:px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg hidden sm:block">X / Twitter</span>
+        </a>
+    </div>
+
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000 min-h-screen overflow-x-hidden relative">
+        
+        <div class="blob bg-mint w-64 h-64 md:w-96 md:h-96 rounded-full top-0 left-0"></div>
+        <div class="blob bg-blue-300 w-64 h-64 md:w-96 md:h-96 rounded-full top-40 right-[-50px]"></div>
+        <div class="blob bg-mint w-80 h-80 md:w-[30rem] md:h-[30rem] rounded-full bottom-0 left-1/4"></div>
+
+        <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
+                <div class="flex justify-between items-center h-20 md:h-24">
+                    <div class="flex items-center gap-3 md:gap-4 cursor-pointer hover:scale-105 transition-transform">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-mint rounded-full blur animate-pulse"></div>
+                            <img src="images/acFdsz51_400x400.jpg" class="relative w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-white shadow-md" alt="Logo">
+                        </div>
+                        <span class="font-extrabold text-xl md:text-2xl tracking-tighter text-darker">Acads<span class="text-mintDark">commssz</span></span>
+                    </div>
+                    <div class="hidden lg:flex space-x-10 items-center">
+                        <a href="#home" class="text-gray-600 hover:text-mintDark font-semibold text-lg transition-colors">Home</a>
+                        <a href="#expertise" class="text-gray-600 hover:text-mintDark font-semibold text-lg transition-colors">Expertise</a>
+                        <a href="#services" class="text-gray-600 hover:text-mintDark font-semibold text-lg transition-colors">Services</a>
+                        <a href="#contact" class="bg-darker hover:bg-mintDark text-white font-bold py-3 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">Commission Me</a>
+                    </div>
+                    <div class="lg:hidden">
+                        <a href="#contact" class="bg-darker text-white font-bold py-2 px-5 rounded-full text-sm shadow-lg">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="pt-28 md:pt-36 pb-12 md:pb-20 px-4 sm:px-6 max-w-screen-2xl mx-auto relative z-10">
+            <div class="w-full rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl mb-10 md:mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out" id="hero-banner">
+              
+            </div>
+
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-10 md:gap-16">
+                <div class="w-full lg:w-3/5 flex flex-col justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200 text-center lg:text-left" id="hero-text">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 mb-6">
+                        <div class="inline-flex items-center gap-2 py-1.5 md:py-2 px-4 md:px-5 rounded-full bg-white border border-mint shadow-sm w-max">
+                            <span class="relative flex h-2 w-2 md:h-3 md:w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mintDark opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2 w-2 md:h-3 md:w-3 bg-mintDark"></span>
+                            </span>
+                            <span class="text-xs md:text-sm font-bold text-darker tracking-wide uppercase">Commissions Open</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 py-1.5 md:py-2 px-4 md:px-5 rounded-full bg-darker text-white shadow-sm w-max">
+                            <i class="fas fa-calendar-check text-mint text-xs md:text-sm"></i>
+                            <span class="text-xs md:text-sm font-bold tracking-wide uppercase">Est. 2022</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-darker">
+                        Elevate your <br class="hidden sm:block">
+                        <span id="typed-text" class="gradient-text typing-cursor"></span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                        Your trusted partner for international and local projects. From comprehensive <strong class="text-darker">Academic Tasks & Lab Activities</strong> to advanced <strong class="text-darker">Machine Learning Models</strong> and full-scale <strong class="text-darker">Enterprise Applications</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#services" class="bg-mintDark text-white font-bold text-base md:text-lg py-3 md:py-4 px-8 md:px-10 rounded-full shadow-[0_10px_20px_rgba(107,198,152,0.3)] hover:bg-darker transition-all transform hover:-translate-y-2">Explore Solutions <i class="fas fa-arrow-right ml-2"></i></a>
+                        <a href="#expertise" class="bg-white text-darker border-2 border-gray-200 font-bold text-base md:text-lg py-3 md:py-4 px-8 md:px-10 rounded-full hover:border-mintDark hover:text-mintDark transition-all transform hover:-translate-y-2">View Tech Stack</a>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 flex justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300 mt-8 lg:mt-0" id="hero-image">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-mint to-babyBlue rounded-full animate-spin-slow blur-xl opacity-60"></div>
+                        <img src="images/acFdsz51_400x400.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-[8px] md:border-[10px] border-white shadow-2xl z-10 animate-float">
+                        
+                        <div class="absolute top-4 -left-4 md:top-10 md:-left-10 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl z-20 flex items-center gap-3 md:gap-4 animate-float-delayed scale-90 md:scale-100">
+                            <div class="bg-blue-100 p-2 rounded-lg">
+                                <i class="fas fa-globe-americas text-blue-500 text-xl md:text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-extrabold text-darker leading-tight text-sm md:text-base">Global</p>
+                                <p class="text-[10px] md:text-xs text-gray-500 font-semibold">Clients Served</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-4 -right-4 md:bottom-10 md:-right-10 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl z-20 flex items-center gap-3 md:gap-4 animate-float scale-90 md:scale-100">
+                            <div class="bg-mint p-2 rounded-lg">
+                                <i class="fas fa-shield-check text-darker text-xl md:text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-extrabold text-darker leading-tight text-sm md:text-base">100%</p>
+                                <p class="text-[10px] md:text-xs text-gray-500 font-semibold">Success Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 md:py-12 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 relative z-20 overflow-hidden shadow-inner">
+            <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgwemIiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+                <div class="bg-white/20 p-4 rounded-full animate-pulse-fast">
+                    <i class="fas fa-bolt text-4xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2 uppercase drop-shadow-md">
+                        Need it done fast? I cater to <span class="text-yellow-300">24HR Rush Deadlines!</span>
+                    </h2>
+                    <p class="text-white/90 font-medium text-sm md:text-lg max-w-3xl">
+                        Accepting urgent dues for Programming, Capstone, Thesis, and ALL Academic Tasks & Projects. Delivered earlier without compromising quality.
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0 md:ml-auto">
+                    <a href="#contact" class="inline-block bg-white text-red-600 font-extrabold py-3 px-8 rounded-full shadow-lg hover:bg-darker hover:text-white transition-all transform hover:scale-105 whitespace-nowrap">
+                        Book Urgent Task
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" class="py-16 md:py-20 bg-darker text-white relative z-10 overflow-hidden">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 mb-10 md:mb-12 text-center opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element">
+                <span class="text-mint font-bold tracking-widest uppercase text-xs md:text-sm mb-2 block">The Arsenal</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 md:mb-6">Mastering Every Language & Tool</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto text-base md:text-lg px-2">Fluent in the entire tech stack, from fundamental scripting to advanced machine learning architecture.</p>
+            </div>
+
+            <div class="w-full overflow-hidden flex flex-col gap-6 md:gap-8 opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200 scroll-element relative">
+                <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-darker to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-darker to-transparent z-10 pointer-events-none"></div>
+                
+                <div class="flex animate-marquee tech-track whitespace-nowrap items-center">
+                    <div class="flex space-x-10 md:space-x-16 items-center px-4 md:px-8">
+                        <i class="devicon-python-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-tensorflow-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-pytorch-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-java-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-cplusplus-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-csharp-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-c-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-javascript-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-typescript-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-php-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-ruby-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-go-original-wordmark colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                    </div>
+                    <div class="flex space-x-10 md:space-x-16 items-center px-4 md:px-8">
+                        <i class="devicon-python-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-tensorflow-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-pytorch-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-java-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-cplusplus-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-csharp-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-c-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-javascript-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-typescript-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-php-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-ruby-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-go-original-wordmark colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                    </div>
+                </div>
+
+                <div class="flex animate-marquee tech-track whitespace-nowrap items-center" style="animation-direction: reverse;">
+                    <div class="flex space-x-10 md:space-x-16 items-center px-4 md:px-8">
+                        <i class="devicon-androidstudio-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-react-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-angularjs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-vuejs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-nodejs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-django-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-laravel-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-mysql-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-postgresql-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-mongodb-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-git-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-docker-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                    </div>
+                    <div class="flex space-x-10 md:space-x-16 items-center px-4 md:px-8">
+                        <i class="devicon-androidstudio-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-react-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-angularjs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-vuejs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-nodejs-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-django-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-laravel-original colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-mysql-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-postgresql-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-mongodb-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-git-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                        <i class="devicon-docker-plain colored text-5xl md:text-7xl hover:scale-125 transition-transform cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-24 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-12 md:mb-20 opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-darker">Tri-Tier Commissions</h2>
+                <div class="w-24 md:w-32 h-1.5 bg-gradient-to-r from-mint to-blue-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-2">Categorized solutions designed specifically for students, professionals, and enterprises. Accommodating all timelines.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                
+                <div class="glass-card rounded-2xl md:rounded-[2rem] p-6 md:p-10 tilt-card relative overflow-hidden group opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element delay-100">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 md:w-40 md:h-40 bg-blue-100 rounded-full blur-2xl group-hover:bg-mint transition-colors duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-darker rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-xl text-mint">
+                            <i class="fas fa-user-graduate text-3xl md:text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 text-darker">Academic Mastery</h3>
+                        <p class="text-gray-600 mb-6 md:mb-8 md:h-24 text-sm md:text-base">I cater to all academic requirements, ensuring comprehensive support for IT, CS, and engineering degrees. 24hr rush available.</p>
+                        <ul class="space-y-3 md:space-y-4 font-semibold text-gray-700 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> All Academic Tasks & Lab Activities</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Capstone, Thesis & Projects</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> UML, Flowcharts & Pseudocode</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Flowgorithm & Algorithm Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl md:rounded-[2rem] p-6 md:p-10 tilt-card relative overflow-hidden group opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element delay-200 border-2 border-mint">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 md:w-40 md:h-40 bg-mint rounded-full blur-2xl group-hover:bg-blue-200 transition-colors duration-500 opacity-50"></div>
+                    <div class="absolute top-0 right-0 bg-mint text-darker text-[10px] md:text-xs font-bold px-3 md:px-4 py-1.5 md:py-2 rounded-bl-xl md:rounded-bl-2xl z-20">MOST POPULAR</div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-mint rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-xl text-darker">
+                            <i class="fas fa-robot text-3xl md:text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 text-darker">Professional Projects</h3>
+                        <p class="text-gray-600 mb-6 md:mb-8 md:h-24 text-sm md:text-base">Advanced and scalable programming solutions including AI integration and native application development.</p>
+                        <ul class="space-y-3 md:space-y-4 font-semibold text-gray-700 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Machine Learning & Data Science</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Android Studio Mobile Apps</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Full-Stack Web Development</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> API Integration & Custom Scripts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl md:rounded-[2rem] p-6 md:p-10 tilt-card relative overflow-hidden group opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element delay-300">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 md:w-40 md:h-40 bg-gray-200 rounded-full blur-2xl group-hover:bg-mint transition-colors duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-babyBlue rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-xl text-darker">
+                            <i class="fas fa-building text-3xl md:text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 text-darker">Business Enterprise</h3>
+                        <p class="text-gray-600 mb-6 md:mb-8 md:h-24 text-sm md:text-base">End-to-end IT solutions designed to streamline operations and enhance digital presence for companies.</p>
+                        <ul class="space-y-3 md:space-y-4 font-semibold text-gray-700 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Corporate Websites & Portals</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Business Management Web Apps</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Database Architecture & Admin</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-mintDark mt-1 mr-3 text-lg md:text-xl"></i> Enterprise SaaS Prototyping</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 relative overflow-hidden bg-white z-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNjY2MiLz48L3N2Zz4=')] opacity-50 z-0"></div>
+            
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="bg-darker rounded-3xl md:rounded-[3rem] p-8 md:p-16 lg:p-20 shadow-[0_30px_60px_rgba(0,0,0,0.2)] text-center text-white opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-element">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6">Let's build something incredible.</h2>
+                    <p class="text-base md:text-xl text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto">Ready to conquer your academic labs, hit a 24hr rush deadline, or launch your business application? Reach out through any of the channels below.</p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+                        <a href="mailto:contact@acadscommssz.com" class="flex items-center justify-center gap-3 bg-white text-darker font-bold py-3 md:py-4 px-6 md:px-8 rounded-full hover:bg-mint transition-colors text-base md:text-lg border-2 border-transparent">
+                            <img src="images/email.png" alt="Email" class="w-5 h-5 md:w-6 md:h-6" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732200.png'"> Drop an Email
+                        </a>
+                        <a href="https://t.me/acadscommssz" target="_blank" class="flex items-center justify-center gap-3 bg-white text-darker font-bold py-3 md:py-4 px-6 md:px-8 rounded-full hover:bg-blue-100 transition-colors text-base md:text-lg border-2 border-transparent">
+                            <img src="images/telegram.png" alt="Telegram" class="w-5 h-5 md:w-6 md:h-6" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'"> Message Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-darker text-white pt-12 md:pt-20 pb-8 md:pb-10 border-t border-gray-800 relative z-10">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <img src="images/acFdsz51_400x400.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-600 grayscale hover:grayscale-0 transition-all" alt="Logo">
+                    <span class="font-extrabold text-xl md:text-2xl tracking-tighter">Acads<span class="text-mint">commssz</span></span>
+                </div>
+                
+                <div class="flex gap-5 md:gap-6 items-center">
+                    <a href="https://x.com/acadscommssz" target="_blank" class="hover:-translate-y-1 transition-all"><img src="images/x.png" alt="X" class="w-5 h-5 md:w-6 md:h-6 invert opacity-60 hover:opacity-100" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg'"></a>
+                    <a href="https://t.me/acadscommssz" target="_blank" class="hover:-translate-y-1 transition-all"><img src="images/telegram.png" alt="Telegram" class="w-5 h-5 md:w-6 md:h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'"></a>
+                    <a href="mailto:contact@acadscommssz.com" class="hover:-translate-y-1 transition-all"><img src="images/email.png" alt="Email" class="w-5 h-5 md:w-6 md:h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732200.png'"></a>
+                </div>
+            </div>
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
+                <p>&copy; 2026 Acadscommssz. Established 2022. Academic, Professional & Business Tasks.</p>
+                <p class="mt-2 md:mt-0">Crafted with precision & logic.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('main-content');
+            const body = document.getElementById('body');
+            const heroBanner = document.getElementById('hero-banner');
+            const heroText = document.getElementById('hero-text');
+            const heroImage = document.getElementById('hero-image');
+
+            setTimeout(() => {
+                loader.classList.add('hide-loader');
+                
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    mainContent.classList.remove('opacity-0');
+                    body.classList.remove('overflow-hidden');
+                    
+                    setTimeout(() => {
+                        heroBanner.classList.remove('opacity-0', 'translate-y-10');
+                        heroText.classList.remove('opacity-0', 'translate-y-10');
+                        heroImage.classList.remove('opacity-0', 'translate-y-10');
+                    }, 100);
+
+                }, 400); 
+
+            }, 1000); 
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-element').forEach((el) => {
+            observer.observe(el);
+        });
+
+        const texts = ["Academic Solutions.", "Capstone Projects.", "24HR Rush Tasks.", "Machine Learning.", "Business Web Apps."];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+
+            if (isDeleting) {
+                letter = currentText.slice(0, --index);
+                typeSpeed = 40;
+            } else {
+                letter = currentText.slice(0, ++index);
+                typeSpeed = 80;
+            }
+
+            document.getElementById('typed-text').textContent = letter;
+
+            if (!isDeleting && letter.length === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && letter.length === 0) {
+                isDeleting = false;
+                count++;
+                typeSpeed = 400;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        setTimeout(type, 2500);
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
